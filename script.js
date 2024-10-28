@@ -35,8 +35,9 @@ const game = (function() {
             }
 
             removeListeners();
-            openModal.textContent = "Play again?";
+            openModal.textContent = "Play Again";
             openModal.style.display = "block";
+            openModal.style.margin = "0 0 20px 0"
         }
 
         function removeListeners() {

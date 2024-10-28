@@ -53,26 +53,126 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* Start */
 body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100vw;
+    --s: 120px; /* control the size*/
+    --c1: #fff1db;
+    --c2: #f6f2ea;
+    --s: 150px; /* control the size*/
+    --c1: #fff1db;
+    --c2: #fff5e0;
+    
+    --g:,var(--c1) 25%,#0000 0;
+    background:
+        conic-gradient(from  45deg at 75% 25%var(--g)),
+        conic-gradient(from 121deg at 25% 75%var(--g)),
+        conic-gradient(from -45deg at 75% 45%var(--g)),
+        conic-gradient(from 210deg at 25% 15%var(--g)),
+        repeating-conic-gradient(from -45deg,var(--c1) 0 15deg,var(--c2) 0 50%);
+    background-size: var(--s) var(--s);
 }
 
 dialog {
+    border: none;
+    border: 4px solid #ffb23e;
+    border-radius: 4px;
     margin: auto;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.836);
+}
+
+dialog label {
+    font-weight: 600;
+}
+
+dialog form input[type="submit"],
+dialog form button {
+    height: 40px;
+    background-color: #ffae00;
+    cursor: pointer;
+    color: white;
+    border: none;
+    padding: 8px 12px 8px 12px;
+    border-radius: 6px;
+}
+
+dialog form button {
+    background-color: red;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-modal {
+    background-color: #ffb23e;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px 8px 18px;
+}
+
+.show-modal:hover {
+    background-color: rgb(255, 159, 16);
 }
 
 .tic-tac-toe {
     display: none;
     grid-template-columns: 100px 100px 100px;
+    margin-bottom: 20px;
 }
 
 .tic-tac-toe .boxes {
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100px;
-    border: 2px solid black;
+    border: 2px solid rgb(255, 159, 16);
 }
+
+.tic-tac-toe .boxes[data-row-index="0"][data-col-index="0"] {
+    border-top: none;
+    border-left: none;
+}
+.tic-tac-toe .boxes[data-row-index="0"][data-col-index="1"] {
+    border-top: none;
+}
+.tic-tac-toe .boxes[data-row-index="0"][data-col-index="2"] {
+    border-top: none;
+    border-right: none;
+}
+
+.tic-tac-toe .boxes[data-row-index="1"][data-col-index="0"] {
+    border-left: none;
+}
+.tic-tac-toe .boxes[data-row-index="1"][data-col-index="2"] {
+    border-right: none;
+}
+
+.tic-tac-toe .boxes[data-row-index="2"][data-col-index="0"] {
+    border-left: none;
+    border-bottom: none;
+}
+.tic-tac-toe .boxes[data-row-index="2"][data-col-index="1"] {
+    border-bottom: none;
+}
+.tic-tac-toe .boxes[data-row-index="2"][data-col-index="2"] {
+    border-right: none;
+    border-bottom: none;
+}
+
 
 .info-text {
     text-align: center;

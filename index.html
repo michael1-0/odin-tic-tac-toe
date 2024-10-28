@@ -8,6 +8,32 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    
+    <dialog>
+        <form action="/submit-form" method="dialog">
+            <label for="playerOneName">Player 1's name:</label><br>
+            <input type="text" id="playerOneName" name="playerOneName" required><br>
+
+            <label for="playerTwoName">Player 2's name:</label><br>
+            <input type="text" id="playerTwoName" name="playerTwoName" required><br>
+
+            <input type="submit" value="Submit">
+            <button type="button" class="close-modal">Cancel</button>
+        </form>
+    </dialog>
+    <main>
+        <button class="show-modal">Start Game</button>
+        <div class="info-text"></div>
+        <div class="tic-tac-toe">
+            <div class="boxes" data-row-index="0" data-col-index="0"></div>
+            <div class="boxes" data-row-index="0" data-col-index="1"></div>
+            <div class="boxes" data-row-index="0" data-col-index="2"></div>
+            <div class="boxes" data-row-index="1" data-col-index="0"></div>
+            <div class="boxes" data-row-index="1" data-col-index="1"></div>
+            <div class="boxes" data-row-index="1" data-col-index="2"></div>
+            <div class="boxes" data-row-index="2" data-col-index="0"></div>
+            <div class="boxes" data-row-index="2" data-col-index="1"></div>
+            <div class="boxes" data-row-index="2" data-col-index="2"></div>
+        </div>
+    </main>
 </body>
 </html>
